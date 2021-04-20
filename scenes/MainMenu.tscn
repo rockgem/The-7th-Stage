@@ -1,0 +1,334 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://scripts/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://scripts/MusicSlider.gd" type="Script" id=2]
+[ext_resource path="res://scripts/SFXSlider.gd" type="Script" id=3]
+[ext_resource path="res://images/Screenshot (23).png" type="Texture" id=4]
+[ext_resource path="res://images/Screenshot (24).png" type="Texture" id=5]
+[ext_resource path="res://images/Screenshot (22).png" type="Texture" id=6]
+[ext_resource path="res://images/sprites/hpOrb.png" type="Texture" id=7]
+[ext_resource path="res://images/Untitlffffed.png" type="Texture" id=8]
+[ext_resource path="res://images/Untitled.png" type="Texture" id=9]
+[ext_resource path="res://resources/Silver.ttf" type="DynamicFontData" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+outline_size = 1
+outline_color = Color( 0.203922, 0.180392, 0.180392, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="Animation" id=2]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("HelpPanel:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 180 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("HelpPanel:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 180 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("SettingsPanel:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 340, 0 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("SettingsPanel:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 340, 0 ) ]
+}
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="Panel"]
+margin_left = 115.0
+margin_top = 97.0
+margin_right = 220.0
+margin_bottom = 113.0
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="Button" parent="Panel"]
+margin_left = 115.0
+margin_top = 117.0
+margin_right = 220.0
+margin_bottom = 132.0
+text = "Settings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="Panel"]
+margin_left = 115.0
+margin_top = 153.0
+margin_right = 220.0
+margin_bottom = 168.0
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HelpButton" type="Button" parent="Panel"]
+margin_left = 115.0
+margin_top = 136.0
+margin_right = 220.0
+margin_bottom = 149.0
+text = "Help"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 146.0
+margin_top = 24.0
+margin_right = 189.0
+margin_bottom = 45.0
+custom_colors/font_color = Color( 0.270588, 0.0117647, 0.0117647, 1 )
+text = "the"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 124.0
+margin_top = 30.0
+margin_right = 220.0
+margin_bottom = 75.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.270588, 0.0470588, 0.0470588, 1 )
+custom_colors/font_color_shadow = Color( 0.0117647, 0.0117647, 0.12549, 1 )
+text = "7th Stage"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Untitled" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 20, 157.409 )
+scale = Vector2( 0.041791, 0.041791 )
+texture = ExtResource( 9 )
+
+[node name="Untitlffffed" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 53, 157.514 )
+scale = Vector2( 0.043077, 0.0430769 )
+texture = ExtResource( 8 )
+
+[node name="SettingsPanel" type="Panel" parent="."]
+margin_left = 340.0
+margin_right = 680.0
+margin_bottom = 180.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="SettingsPanel"]
+margin_left = 79.0
+margin_top = 24.0
+margin_right = 263.0
+margin_bottom = 45.0
+text = "Music"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicSlider" type="HSlider" parent="SettingsPanel"]
+margin_left = 79.0
+margin_top = 45.0
+margin_right = 263.0
+margin_bottom = 61.0
+max_value = 1.0
+step = 0.05
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="SettingsPanel"]
+margin_left = 79.0
+margin_top = 73.0
+margin_right = 263.0
+margin_bottom = 94.0
+text = "Sound Effects"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SFXSlider" type="HSlider" parent="SettingsPanel"]
+margin_left = 79.0
+margin_top = 94.0
+margin_right = 263.0
+margin_bottom = 110.0
+max_value = 1.0
+step = 0.05
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="Button" parent="SettingsPanel"]
+margin_left = 126.0
+margin_top = 151.0
+margin_right = 215.0
+margin_bottom = 164.0
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HelpPanel" type="Panel" parent="."]
+margin_top = 180.0
+margin_right = 340.0
+margin_bottom = 360.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Screenshot (22)" type="Sprite" parent="HelpPanel"]
+position = Vector2( 124, 155 )
+scale = Vector2( 0.137904, 0.169075 )
+texture = ExtResource( 6 )
+
+[node name="Screenshot (23)" type="Sprite" parent="HelpPanel"]
+position = Vector2( 65, 51 )
+scale = Vector2( 0.133245, 0.145979 )
+texture = ExtResource( 4 )
+
+[node name="Screenshot (24)" type="Sprite" parent="HelpPanel"]
+position = Vector2( 178, 52.9999 )
+scale = Vector2( 0.154198, 0.173174 )
+texture = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="HelpPanel"]
+margin_left = 79.0
+margin_top = 94.0
+margin_right = 182.0
+margin_bottom = 115.0
+custom_colors/font_color = Color( 0.756863, 0.847059, 0.137255, 1 )
+text = "Press [Q] to change between skills."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="HelpPanel"]
+margin_left = 79.0
+margin_top = 115.0
+margin_right = 182.0
+margin_bottom = 136.0
+custom_colors/font_color = Color( 0.756863, 0.847059, 0.137255, 1 )
+text = "WASD to move."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="HelpPanel"]
+margin_left = 250.0
+margin_top = 38.0
+margin_right = 340.0
+margin_bottom = 75.0
+custom_colors/font_color = Color( 0.756863, 0.847059, 0.137255, 1 )
+text = "Pick up HP Orbs to heal
+10hp"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="HelpPanel"]
+margin_left = 15.0
+margin_top = 162.0
+margin_right = 235.0
+margin_bottom = 183.0
+custom_colors/font_color = Color( 0.756863, 0.847059, 0.137255, 1 )
+text = "Acquire new skills by standing still and let the stagebar fill."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="HelpPanel"]
+margin_left = 250.0
+margin_top = 162.0
+margin_right = 331.0
+margin_bottom = 175.0
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hpOrb" type="Sprite" parent="HelpPanel"]
+position = Vector2( 294, 27 )
+texture = ExtResource( 7 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/helpSlide = SubResource( 2 )
+anims/helpSlideBack = SubResource( 3 )
+anims/settingsSlide = SubResource( 4 )
+anims/settingsSlideBack = SubResource( 5 )
+[connection signal="pressed" from="Panel/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="Panel/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="Panel/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="Panel/HelpButton" to="." method="_on_HelpButton_pressed"]
+[connection signal="value_changed" from="SettingsPanel/MusicSlider" to="SettingsPanel/MusicSlider" method="_on_MusicSlider_value_changed"]
+[connection signal="value_changed" from="SettingsPanel/SFXSlider" to="SettingsPanel/SFXSlider" method="_on_SFXSlider_value_changed"]
+[connection signal="pressed" from="SettingsPanel/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="HelpPanel/Button" to="." method="_on_Button_pressed"]

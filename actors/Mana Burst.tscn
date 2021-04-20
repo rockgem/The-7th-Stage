@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://actors/Projectile.tscn" type="PackedScene" id=2]
+
+[node name="Mana Burst" instance=ExtResource( 2 )]
+duration = 2
+damage = 30
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2( 0, 4.54747e-13 )

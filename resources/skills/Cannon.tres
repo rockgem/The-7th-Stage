@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://resources/skills/Skill.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+skillName = "Cannon"
+damage = 200
+releaseSpeed = 1.0
+attackAmount = 1

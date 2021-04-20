@@ -1,0 +1,100 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://images/sprites/playerRun.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://actors/PlayerDetectZone.tscn" type="PackedScene" id=4]
+[ext_resource path="res://music/skill.wav" type="AudioStream" id=5]
+[ext_resource path="res://images/sprites/playerIdle.png" type="Texture" id=6]
+[ext_resource path="res://music/Ghost13.wav" type="AudioStream" id=7]
+[ext_resource path="res://music/Male6.wav" type="AudioStream" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4.45604, 7.67293 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 6 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 6 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 6 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "idle",
+"speed": 6.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "run",
+"speed": 6.0
+} ]
+
+[node name="Player" type="KinematicBody2D" groups=[
+"PlayerGroup",
+]]
+collision_mask = 8
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.492157, 0.354353 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 10 )
+animation = "idle"
+playing = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="TopLeft" type="Position2D" parent="Camera2D"]
+position = Vector2( -184, -106 )
+
+[node name="BottomRight" type="Position2D" parent="Camera2D"]
+position = Vector2( 191, 112 )
+
+[node name="Position2D" type="Position2D" parent="."]
+
+[node name="PlayerDetectZone" parent="." instance=ExtResource( 4 )]
+
+[node name="SkillSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+bus = "SFX"
+
+[node name="MonsterSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+[connection signal="area_entered" from="PlayerDetectZone" to="." method="_on_PlayerDetectZone_area_entered"]
+[connection signal="body_entered" from="PlayerDetectZone" to="." method="_on_PlayerDetectZone_body_entered"]

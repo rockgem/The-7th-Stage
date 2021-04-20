@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://resources/skills/Skill.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+skillName = "Poison Shot"
+damage = 10
+releaseSpeed = 0.5
+attackAmount = 10
